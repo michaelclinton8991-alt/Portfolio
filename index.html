@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="./icon/favicon.png">
+    <title>MIS & Data Analyst Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #E9EDF3;
+            color: #1F2933;
+        }
+
+        h1,
+        h2,
+        h3,
+        .font-poppins {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .denim-stripes {
+            background-image: linear-gradient(90deg, rgba(158, 197, 217, 0.1) 1px, transparent 1px);
+            background-size: 40px 100%;
+        }
+
+        .glass-nav {
+            background: rgba(233, 237, 243, 0.7);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(158, 197, 217, 0.3);
+        }
+
+        .project-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(107, 143, 179, 0.2);
+        }
+
+        .skill-badge {
+            background: #FFFFFF;
+            border: 1px solid #9EC5D9;
+            transition: all 0.2s;
+        }
+
+        .skill-badge:hover {
+            background: #6B8FB3;
+            color: white;
+            border-color: #6B8FB3;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="fixed w-full z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+
+                <div onclick="openModal()" class="cursor-pointer transition transform hover:scale-110 group/logo">
+                    <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="50" r="48" fill="#F8FAFC" stroke="#2F5D8A" stroke-width="2" />
+                        <path d="M25 65V35L45 55L65 35V45" stroke="#2F5D8A" stroke-width="8" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M75 55C75 45 68 38 60 38M75 55C75 70 65 80 50 80C35 80 25 70 25 55" stroke="#6B8FB3"
+                            stroke-width="8" stroke-linecap="round" />
+                    </svg>
+                </div>
+
+                <a href="#hero" class="flex items-center space-x-2 group">
+                    <div class="text-2xl font-bold text-[#2F5D8A] tracking-tight">
+                        Michael<span class="text-[#6B8FB3]">&nbsp;Clinton</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="hidden md:flex space-x-8 font-medium text-[#6B7280]">
+                <a href="#hero" class="hover:text-[#2F5D8A] transition">Home</a>
+                <a href="#about" class="hover:text-[#2F5D8A] transition">About</a>
+                <a href="#projects" class="hover:text-[#2F5D8A] transition">Projects</a>
+                <a href="#contact" class="hover:text-[#2F5D8A] transition">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <div id="profileModal" class="fixed inset-0 z-[100] hidden bg-black/80 flex items-center justify-center p-4"
+        onclick="closeModal()">
+        <div class="relative max-w-sm w-full animate-in zoom-in duration-200" onclick="event.stopPropagation()">
+            <button onclick="closeModal()" class="absolute -top-10 right-0 text-white text-3xl">&times;</button>
+            <img src="./profile/1776365877544.jpg" class="w-full aspect-square object-cover rounded-lg shadow-2xl"
+                alt="Profile Large">
+            <div
+                class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4 rounded-b-lg">
+                <p class="text-white font-semibold">Michael Clinton</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal() {
+            document.getElementById('profileModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Stop scrolling when open
+        }
+
+        function closeModal() {
+            document.getElementById('profileModal').classList.add('hidden');
+            document.body.style.overflow = 'auto'; // Re-enable scrolling
+        }
+    </script>
+
+    <section id="hero" class="relative min-h-[90vh] flex items-center pt-24 pb-16 denim-stripes overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+            <div class="text-center lg:text-left">
+                <span
+                    class="inline-block px-4 py-1 rounded-full bg-[#9EC5D9] text-[#2F5D8A] text-xs font-bold uppercase tracking-widest mb-4">
+                    MIS & Data Analyst
+                </span>
+                <h1 class="text-4xl md:text-6xl font-bold text-[#1F2933] leading-tight mb-6">
+                    Turning Data Into <span class="text-[#2F5D8A]">Decisions</span>
+                </h1>
+                <p class="text-lg text-[#6B7280] mb-8 leading-relaxed max-w-lg mx-auto lg:mx-0">
+                    I build automated reports, dashboards, and analytics solutions that help businesses make smarter
+                    decisions.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                    <a href="#projects"
+                        class="px-8 py-4 bg-[#2F5D8A] text-white rounded-2xl font-bold hover:bg-[#6B8FB3] transition shadow-lg">
+                        View Projects
+                    </a>
+                    <a href="#contact"
+                        class="px-8 py-4 border-2 border-[#6B8FB3] text-[#2F5D8A] rounded-2xl font-bold hover:bg-white transition">
+                        Contact Me
+                    </a>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 md:gap-6">
+                <div class="bg-white p-6 rounded-[20px] shadow-sm border border-[#9EC5D9]/30">
+                    <i data-lucide="bar-chart-3" class="text-[#6B8FB3] mb-4 w-6 h-6"></i>
+                    <h3 class="text-2xl md:text-3xl font-bold text-[#2F5D8A]">10+</h3>
+                    <p class="text-[#6B7280] text-[10px] md:text-sm uppercase tracking-wider font-semibold">Analytics
+                        Projects</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-[20px] shadow-sm border border-[#9EC5D9]/30 md:mt-8">
+                    <i data-lucide="database" class="text-[#6B8FB3] mb-4 w-6 h-6"></i>
+                    <h3 class="text-lg md:text-xl font-bold text-[#2F5D8A]">SQL • Python</h3>
+                    <p class="text-[#6B7280] text-[10px] md:text-sm uppercase tracking-wider font-semibold">Tech Stack
+                    </p>
+                </div>
+
+                <div class="bg-white p-6 rounded-[20px] shadow-sm border border-[#9EC5D9]/30">
+                    <i data-lucide="zap" class="text-[#6B8FB3] mb-4 w-6 h-6"></i>
+                    <h3 class="text-lg md:text-xl font-bold text-[#2F5D8A]">Power BI</h3>
+                    <p class="text-[#6B7280] text-[10px] md:text-sm uppercase tracking-wider font-semibold">
+                        Visualization</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-[20px] shadow-sm border border-[#9EC5D9]/30 md:mt-8">
+                    <i data-lucide="check-circle" class="text-[#6B8FB3] mb-4 w-6 h-6"></i>
+                    <h3 class="text-lg md:text-xl font-bold text-[#2F5D8A]">Reporting</h3>
+                    <p class="text-[#6B7280] text-[10px] md:text-sm uppercase tracking-wider font-semibold">Specialist
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 bg-white">
+        <div class="max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
+
+            <div class="w-64 h-64 shrink-0">
+                <img src="./profile/1776365877544.jpg" alt="Professional Profile Photo"
+                    class="w-full h-full object-cover rounded-3xl shadow-xl border-4 border-[#E9EDF3]">
+            </div>
+
+            <div class="text-center md:text-left">
+                <h2 class="text-3xl font-bold mb-6 text-[#2F5D8A]">Bridging Data & Strategy</h2>
+                <p class="text-lg text-[#6B7280] leading-relaxed">
+                    I am a <strong>Data Analyst and MIS specialist</strong> based in Mumbai, dedicated to transforming
+                    raw database complexity into clear business insights.
+                    Leveraging a background in full-stack development and automated reporting, I bridge the gap between
+                    technical data
+                    structures and strategic management support. I don't just move data; I build systems—from Google
+                    Sheets automation
+                    to Power BI dashboards—that provide real-time clarity and actionable intelligence.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="projects" class="py-24 px-6 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-16">
+                <h2 class="text-3xl font-bold text-[#2F5D8A] mb-4">Core MIS Projects</h2>
+                <div class="h-1 w-20 bg-[#6B8FB3]"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                <div
+                    class="bg-[#F8FAFC] p-6 rounded-2xl border border-[#2F5D8A]/10 hover:shadow-lg transition-all duration-300 flex flex-col">
+                    <div class="text-[#2F5D8A] mb-4"><i data-lucide="bar-chart-3" class="w-8 h-8"></i></div>
+                    <h3 class="text-lg font-bold text-[#1F2933] mb-2">Sales Performance MIS</h3>
+                    <p class="text-gray-600 text-sm mb-6 flex-grow">Operational report for weekly business reviews.
+                        Tracks target vs. actual sales using Google Sheets QUERY functions for dynamic performance
+                        analysis.</p>
+
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span
+                            class="text-[10px] font-bold uppercase px-2 py-1 bg-[#E9EDF3] text-[#2F5D8A] rounded">Google
+                            Sheets</span>
+                        <span
+                            class="text-[10px] font-bold uppercase px-2 py-1 bg-[#E9EDF3] text-[#2F5D8A] rounded">Query
+                            Function</span>
+                    </div>
+
+                    <a href="https://docs.google.com/spreadsheets/d/1CxDUqT0hnQ8Ye9pELSTmqkwfr8B8u5us-zdAJmxcFWc/edit?usp=sharing"
+                        target="_blank"
+                        class="block w-full text-center py-2.5 bg-[#2F5D8A] text-white rounded-xl text-sm font-bold hover:bg-[#6B8FB3] transition-colors">
+                        View Project
+                    </a>
+                </div>
+
+                <div
+                    class="bg-[#F8FAFC] p-6 rounded-2xl border border-[#2F5D8A]/10 hover:shadow-lg transition-all duration-300 flex flex-col">
+                    <div class="text-[#2F5D8A] mb-4"><i data-lucide="layout-dashboard" class="w-8 h-8"></i></div>
+                    <h3 class="text-lg font-bold text-[#1F2933] mb-2">Profit Dashboard</h3>
+                    <p class="text-gray-600 text-sm mb-6 flex-grow">Management tool for revenue, profit margins, and
+                        regional trends with interactive drill-throughs.</p>
+
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span
+                            class="text-[10px] font-bold uppercase px-2 py-1 bg-[#E9EDF3] text-[#2F5D8A] rounded">Power
+                            BI</span>
+                        <span
+                            class="text-[10px] font-bold uppercase px-2 py-1 bg-[#E9EDF3] text-[#2F5D8A] rounded">DAX</span>
+                    </div>
+
+                    <button onclick="toggleModal('projectModal')"
+                        class="w-full text-center py-2.5 bg-[#2F5D8A] text-white rounded-xl text-sm font-bold hover:bg-[#6B8FB3] transition-colors cursor-pointer">
+                        View Project
+                    </button>
+                </div>
+
+                <div id="projectModal"
+                    class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+                    <div
+                        class="bg-white rounded-2xl w-full max-w-4xl overflow-hidden shadow-2xl animate-in fade-in zoom-in duration-300">
+                        <div class="flex justify-between items-center p-4 border-b">
+                            <h3 class="font-bold text-[#1F2933]">Profit Dashboard Demo</h3>
+                            <button onclick="toggleModal('projectModal')"
+                                class="text-gray-500 hover:text-[#2F5D8A] font-bold p-2">Close</button>
+                        </div>
+
+                        <div class="w-full aspect-video bg-gray-100">
+                            <video autoplay loop muted playsinline class="w-full h-full object-cover">
+                                <source src="./view/Profit dashboard.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+
+                <script>
+                    function toggleModal(modalId) {
+                        const modal = document.getElementById(modalId);
+                        modal.classList.toggle('hidden');
+                    }
+
+                    // Close modal when clicking outside the content area
+                    window.onclick = function (event) {
+                        const modal = document.getElementById('projectModal');
+                        if (event.target == modal) {
+                            modal.classList.add('hidden');
+                        }
+                    }
+                </script>
+
+                <div
+                    class="bg-[#F8FAFC] p-6 rounded-2xl border border-[#2F5D8A]/10 hover:shadow-lg transition-all duration-300 flex flex-col">
+                    <div class="text-[#2F5D8A] mb-4"><i data-lucide="refresh-cw" class="w-8 h-8"></i></div>
+                    <h3 class="text-lg font-bold text-[#1F2933] mb-2">MIS Automation</h3>
+                    <p class="text-gray-600 text-sm mb-6 flex-grow">Consolidated disparate raw files into a single clean
+                        dataset with automated error checks and custom formatting scripts.</p>
+
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span
+                            class="text-[10px] font-bold uppercase px-2 py-1 bg-[#E9EDF3] text-[#2F5D8A] rounded">Google
+                            Sheets</span>
+                        <span class="text-[10px] font-bold uppercase px-2 py-1 bg-[#E9EDF3] text-[#2F5D8A] rounded">Apps
+                            Script</span>
+                    </div>
+
+                    <a href="https://docs.google.com/spreadsheets/d/1VT7Kk3XIrVgFtjEIXXYLLKAao9Ma-SLC2LeEp7N3Btg/edit?usp=sharing"
+                        target="_blank"
+                        class="block w-full text-center py-2.5 bg-[#2F5D8A] text-white rounded-xl text-sm font-bold hover:bg-[#6B8FB3] transition-colors">
+                        View Project
+                    </a>
+                </div>
+
+                <div
+                    class="bg-[#F8FAFC] p-6 rounded-2xl border border-[#2F5D8A]/10 hover:shadow-lg transition-all duration-300 flex flex-col">
+                    <div class="text-[#2F5D8A] mb-4"><i data-lucide="pie-chart" class="w-8 h-8"></i></div>
+                    <h3 class="text-lg font-bold text-[#1F2933] mb-2">Budget vs. Expense</h3>
+                    <p class="text-gray-600 text-sm mb-6 flex-grow">Cost control and variance tracking project,
+                        analyzing department-wise spend against established budgets.</p>
+
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span
+                            class="text-[10px] font-bold uppercase px-2 py-1 bg-[#E9EDF3] text-[#2F5D8A] rounded">Google
+                            Sheets</span>
+                        <span
+                            class="text-[10px] font-bold uppercase px-2 py-1 bg-[#E9EDF3] text-[#2F5D8A] rounded">SQL</span>
+                    </div>
+
+                    <a href="https://docs.google.com/spreadsheets/d/1MOa6uYONWO3Vw3heARMKLFnLTLJm35D_ejccyZtWakQ/edit?usp=sharing"
+                        target="_blank"
+                        class="block w-full text-center py-2.5 bg-[#2F5D8A] text-white rounded-xl text-sm font-bold hover:bg-[#6B8FB3] transition-colors">
+                        View Project
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-24 px-6 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-16">
+                <h2 class="text-3xl font-bold text-[#2F5D8A] mb-4">Data Analyst Projects</h2>
+                <div class="h-1 w-20 bg-[#6B8FB3]"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                <div
+                    class="bg-[#F8FAFC] p-6 rounded-2xl border border-[#2F5D8A]/10 hover:shadow-lg transition-all duration-300 flex flex-col">
+                    <div class="text-[#2F5D8A] mb-4"><i data-lucide="database" class="w-8 h-8"></i></div>
+                    <h3 class="text-lg font-bold text-[#1F2933] mb-2">SQL Sales Analysis</h3>
+                    <p class="text-gray-600 text-sm mb-6 flex-grow">Advanced analysis using window functions to evaluate
+                        customer ranking and month-over-month growth patterns.</p>
+
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span
+                            class="text-[10px] font-bold uppercase px-2 py-1 bg-[#E9EDF3] text-[#2F5D8A] rounded">SQL</span>
+                        <span
+                            class="text-[10px] font-bold uppercase px-2 py-1 bg-[#E9EDF3] text-[#2F5D8A] rounded">Window
+                            Functions</span>
+                    </div>
+
+                    <a href="https://github.com/michaelclinton8991-alt/Advanced-SQL-Sales-Analysis" target="_blank"
+                        class="block w-full text-center py-2.5 bg-[#2F5D8A] text-white rounded-xl text-sm font-bold hover:bg-[#6B8FB3] transition-colors">
+                        View GitHub Repository
+                    </a>
+                </div>
+
+                <div
+                    class="bg-[#F8FAFC] p-6 rounded-2xl border border-[#2F5D8A]/10 hover:shadow-lg transition-all duration-300 flex flex-col">
+                    <div class="text-[#2F5D8A] mb-4"><i data-lucide="layout-dashboard" class="w-8 h-8"></i></div>
+                    <h3 class="text-lg font-bold text-[#1F2933] mb-2">Sales & Profit Dashboard</h3>
+                    <p class="text-gray-600 text-sm mb-6 flex-grow">Interactive dashboard visualizing revenue,
+                        profitability, and regional trends with KPI drill-through capabilities.</p>
+
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span
+                            class="text-[10px] font-bold uppercase px-2 py-1 bg-[#E9EDF3] text-[#2F5D8A] rounded">Power
+                            BI</span>
+                        <span
+                            class="text-[10px] font-bold uppercase px-2 py-1 bg-[#E9EDF3] text-[#2F5D8A] rounded">DAX</span>
+                    </div>
+
+                    <button onclick="toggleModal('projectModalSales')"
+                        class="w-full text-center py-2.5 bg-[#2F5D8A] text-white rounded-xl text-sm font-bold hover:bg-[#6B8FB3] transition-colors cursor-pointer">
+                        View Project
+                    </button>
+                </div>
+
+                <div id="projectModalSales"
+                    class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+
+                    <div
+                        class="bg-white rounded-2xl p-2 w-full max-w-3xl overflow-hidden shadow-2xl animate-in fade-in zoom-in duration-300">
+
+                        <div class="flex justify-between items-center p-2 border-b">
+                            <h3 class="font-bold text-[#1F2933]">Sales & Profit Dashboard Demo</h3>
+                            <button onclick="toggleModal('projectModalSales')"
+                                class="text-gray-500 hover:text-[#2F5D8A] font-bold p-2">Close</button>
+                        </div>
+
+                        <div class="w-full aspect-video bg-gray-100 rounded-lg overflow-hidden p-4">
+                            <video autoplay loop muted playsinline class="w-full h-full object-contain">
+                                <source src="./view/Sales & Profit Data Analyst.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-[#F8FAFC] p-6 rounded-2xl border border-[#2F5D8A]/10 hover:shadow-lg transition-all duration-300 flex flex-col">
+                    <div class="text-[#2F5D8A] mb-4"><i data-lucide="users" class="w-8 h-8"></i></div>
+                    <h3 class="text-lg font-bold text-[#1F2933] mb-2">HR Analytics Dashboard</h3>
+                    <p class="text-gray-600 text-sm mb-6 flex-grow">People analytics focused on identifying attrition
+                        patterns across various departments and demographic segments.</p>
+
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span
+                            class="text-[10px] font-bold uppercase px-2 py-1 bg-[#E9EDF3] text-[#2F5D8A] rounded">Power
+                            BI</span>
+                        <span
+                            class="text-[10px] font-bold uppercase px-2 py-1 bg-[#E9EDF3] text-[#2F5D8A] rounded">Trends</span>
+                    </div>
+
+                    <button onclick="toggleModal('projectModalHR')"
+                        class="w-full text-center py-2.5 bg-[#2F5D8A] text-white rounded-xl text-sm font-bold hover:bg-[#6B8FB3] transition-colors cursor-pointer">
+                        View Project
+                    </button>
+                </div>
+
+                <div id="projectModalHR"
+                    class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+
+                    <div
+                        class="bg-white rounded-2xl p-2 w-full max-w-3xl overflow-hidden shadow-2xl animate-in fade-in zoom-in duration-300">
+
+                        <div class="flex justify-between items-center p-2 border-b">
+                            <h3 class="font-bold text-[#1F2933]">HR Analytics Dashboard Demo</h3>
+                            <button onclick="toggleModal('projectModalHR')"
+                                class="text-gray-500 hover:text-[#2F5D8A] font-bold p-2">Close</button>
+                        </div>
+
+                        <div class="w-full aspect-video bg-gray-100 rounded-lg overflow-hidden p-4">
+                            <video autoplay loop muted playsinline class="w-full h-full object-contain">
+                                <source src="./view/HR Attrition dashboard.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-[#F8FAFC] p-6 rounded-2xl border border-[#2F5D8A]/10 hover:shadow-lg transition-all duration-300 flex flex-col">
+                    <div class="text-[#2F5D8A] mb-4"><i data-lucide="terminal" class="w-8 h-8"></i></div>
+                    <h3 class="text-lg font-bold text-[#1F2933] mb-2">Automation Pipeline</h3>
+                    <p class="text-gray-600 text-sm mb-6 flex-grow">Automated Python scripts for cleaning and processing
+                        monthly sales data, replacing repetitive manual tasks.</p>
+
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span
+                            class="text-[10px] font-bold uppercase px-2 py-1 bg-[#E9EDF3] text-[#2F5D8A] rounded">Python</span>
+                        <span
+                            class="text-[10px] font-bold uppercase px-2 py-1 bg-[#E9EDF3] text-[#2F5D8A] rounded">Pandas</span>
+                    </div>
+
+                    <a href="https://colab.research.google.com/drive/1TGuyP2-4QNnUhFVSdLlui2IWxA4toJ_9?usp=sharing"
+                        target="_blank"
+                        class="block w-full text-center py-2.5 bg-[#2F5D8A] text-white rounded-xl text-sm font-bold hover:bg-[#6B8FB3] transition-colors">
+                        View Project
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-[#6B8FB3]/10">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-12">Technical Expertise</h2>
+            <div class="flex flex-wrap justify-center gap-4">
+                <span class="skill-badge px-6 py-3 rounded-xl font-medium">Excel</span>
+                <span class="skill-badge px-6 py-3 rounded-xl font-medium">Power BI</span>
+                <span class="skill-badge px-6 py-3 rounded-xl font-medium">SQL</span>
+                <span class="skill-badge px-6 py-3 rounded-xl font-medium">Python</span>
+                <span class="skill-badge px-6 py-3 rounded-xl font-medium">Power Query</span>
+                <span class="skill-badge px-6 py-3 rounded-xl font-medium">Data Cleaning</span>
+                <span class="skill-badge px-6 py-3 rounded-xl font-medium">Dashboard Design</span>
+                <span class="skill-badge px-6 py-3 rounded-xl font-medium">Automation</span>
+                <span class="skill-badge px-6 py-3 rounded-xl font-medium">Business Analysis</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 bg-white">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold mb-12 text-[#2F5D8A]">Education & Certifications</h2>
+            <div class="space-y-8 mb-16">
+                <div class="flex gap-6 border-l-2 border-[#9EC5D9] pl-6 py-2">
+                    <div>
+                        <div class="w-4 h-4 bg-[#6B8FB3] rounded-full -ml-[33px] mt-1.5"></div>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-bold text-[#2F5D8A]">Master of Science (Computer Science)</h4>
+                        <p class="text-[#6B7280]">SIES College of Arts, Science & Commerce, Mumbai | July 2025</p>
+                        <div
+                            class="mt-2 inline-block px-3 py-1 bg-[#9EC5D9]/10 rounded-full border border-[#9EC5D9]/30">
+                            <span class="text-sm font-semibold text-[#2F5D8A]">8.15 CGPA</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex gap-6 border-l-2 border-[#9EC5D9] pl-6 py-2">
+                    <div>
+                        <div class="w-4 h-4 bg-[#6B8FB3] rounded-full -ml-[33px] mt-1.5"></div>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-bold text-[#2F5D8A]">Bachelor of Science (Computer Science)</h4>
+                        <p class="text-[#6B7280]">Nagindas Khandwala College, Mumbai | October 2020</p>
+                        <div
+                            class="mt-2 inline-block px-3 py-1 bg-[#9EC5D9]/10 rounded-full border border-[#9EC5D9]/30">
+                            <span class="text-sm font-semibold text-[#2F5D8A]">9.2 CGPA</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex gap-6 border-l-2 border-[#9EC5D9] pl-6 py-2">
+                    <div>
+                        <div class="w-4 h-4 bg-[#6B8FB3] rounded-full -ml-[33px] mt-1.5"></div>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-bold text-[#2F5D8A]">Key Certifications</h4>
+                        <ul class="text-[#6B7280] mt-2 space-y-1">
+                            <li>• Power BI Professional (DAX & Visualization)</li>
+                            <li>• SQL for Data Science (MySQL/PostgreSQL)</li>
+                            <li>• Python for Data Analysis (Pandas/NumPy)</li>
+                            <li>• REST API Developer (Node.js, Express, MongoDB)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="text-3xl font-bold mb-12 text-[#2F5D8A]">Work Experience</h2>
+            <div class="space-y-8">
+                <div class="flex gap-6 border-l-2 border-[#2F5D8A] pl-6 py-2">
+                    <div>
+                        <div class="w-4 h-4 bg-[#2F5D8A] rounded-full -ml-[33px] mt-1.5"></div>
+                    </div>
+                    <div class="w-full">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-2">
+                            <h4 class="text-xl font-bold text-[#2F5D8A]">Operations Customer Expert</h4>
+                            <span class="text-sm font-medium text-[#6B8FB3] md:mt-1">JUL 2022 - Present</span>
+                        </div>
+                        <p class="text-[#6B7280] font-medium mb-3">Teleperformance Global Services • Mumbai</p>
+                        <div class="mt-6">
+                            <ul class="text-[#6B7280] space-y-2 list-disc ml-4 mt-2">
+                                <li>
+                                    Reduced dependency on Excel-based reporting by implementing automated, web-based
+                                    reporting solutions.
+                                </li>
+                                <li>
+                                    Built data capture and reporting workflows using Spring Boot to generate structured
+                                    MIS reports dynamically.
+                                </li>
+                                <li>
+                                    Automated end-to-end reporting processes, improving data accuracy and significantly
+                                    reducing manual effort.
+                                </li>
+                                <li>
+                                    Designed and maintained MIS dashboards to track key operational and business
+                                    performance metrics.
+                                </li>
+                                <li>
+                                    Used SQL (MySQL) for efficient data extraction, filtering, and report generation for
+                                    business analysis.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 denim-stripes">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="bg-white rounded-[32px] shadow-2xl overflow-hidden flex flex-col md:flex-row">
+                <div class="bg-[#2F5D8A] p-12 text-white md:w-1/3">
+                    <h2 class="text-3xl font-bold mb-6">Let's Connect</h2>
+                    <p class="mb-8 opacity-90 italic">“Let’s turn data into insights together.”</p>
+
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4">
+                            <i data-lucide="mail" class="w-5 h-5 text-[#9EC5D9]"></i>
+                            <span>michaelclinton8991@gmail.com</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <i data-lucide="phone" class="w-5 h-5 text-[#9EC5D9]"></i>
+                            <span>+91 8484 950953</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-12 md:w-2/3">
+                    <form id="contactForm" method="POST" class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-semibold mb-2">Name</label>
+                                <input type="text" name="name" required
+                                    class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#6B8FB3] bg-[#E9EDF3]/30">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold mb-2">Email</label>
+                                <input type="email" name="email" required
+                                    class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#6B8FB3] bg-[#E9EDF3]/30">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold mb-2">Message</label>
+                            <textarea name="message" rows="4" required
+                                class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#6B8FB3] bg-[#E9EDF3]/30"></textarea>
+                        </div>
+
+                        <button type="submit" id="submitBtn"
+                            class="w-full py-4 bg-[#2F5D8A] text-white rounded-xl font-bold hover:bg-[#6B8FB3] transition shadow-lg">
+                            Send Message
+                        </button>
+
+                        <p id="responseMessage" class="text-center font-semibold hidden"></p>
+                    </form>
+                    <script>
+                        const form = document.getElementById('contactForm');
+                        const btn = document.getElementById('submitBtn');
+                        const msg = document.getElementById('responseMessage');
+
+                        form.addEventListener('submit', function (e) {
+                            e.preventDefault(); // Prevents page reload
+
+                            // UI State: Loading
+                            btn.textContent = 'Sending...';
+                            btn.disabled = true;
+
+                            const formData = new FormData(form);
+                            const url = 'https://script.google.com/macros/s/AKfycbyzfubCVjLQMjFBme_Upfxsr15zFLpNZtZ6g4BCTTX18_M2Fc7TVKxmDViiV-83rI_vKQ/exec'; // <-- Paste your URL here
+
+                            fetch(url, {
+                                method: 'POST',
+                                body: formData
+                            })
+                                .then(response => response.text())
+                                .then(data => {
+                                    // UI State: Success
+                                    msg.textContent = 'Message sent successfully!';
+                                    msg.classList.replace('hidden', 'text-green-600');
+                                    form.reset();
+                                    btn.textContent = 'Send Message';
+                                    btn.disabled = false;
+                                })
+                                .catch(error => {
+                                    // UI State: Error
+                                    msg.textContent = 'Something went wrong. Please try again.';
+                                    msg.classList.replace('hidden', 'text-red-600');
+                                    btn.textContent = 'Send Message';
+                                    btn.disabled = false;
+                                });
+                        });
+                    </script>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- <footer class="py-12 text-center text-[#6B7280] border-t border-[#9EC5D9]/20 denim-stripes">
+        <div class="flex justify-center space-x-6 mb-4">
+            <a href="#" class="hover:scale-110 transition">
+                <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" class="w-6 h-6" alt="LinkedIn">
+            </a>
+            <a href="https://github.com/michaelclinton8991-alt" class="hover:scale-110 transition">
+                <img src="https://cdn-icons-png.flaticon.com/512/2111/2111432.png" class="w-6 h-6" alt="GitHub">
+            </a>
+            <a href="#" class="hover:scale-110 transition">
+                <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" class="w-6 h-6" alt="Twitter">
+            </a>
+        </div>
+        <p>&copy; 2026 • Made by Michael Clinton</p>
+    </footer> -->
+
+    <footer class="py-12 text-center text-[#6B7280] border-t border-[#9EC5D9]/20 denim-stripes">
+        <div class="flex justify-center space-x-6 mb-4">
+            <a href="https://github.com/michaelclinton8991-alt" class="hover:scale-110 transition">
+                <img src="https://cdn-icons-png.flaticon.com/512/2111/2111432.png" class="w-6 h-6" alt="GitHub">
+            </a>
+
+            <a href="https://www.linkedin.com/in/michael-clinton-797232375/" class="hover:scale-110 transition">
+                <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" class="w-6 h-6" alt="LinkedIn">
+            </a>
+
+        </div>
+        <p>&copy; 2026 • Made by Michael Clinton</p>
+    </footer>
+
+    <script>
+        // Initialize Icons
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
