@@ -82,24 +82,40 @@
                 </a>
             </div>
 
-            <!-- Navigation Links -->
-            <div class="hidden md:flex items-center space-x-8 font-medium text-[#6B7280]">
-                <a href="#hero" class="hover:text-[#2F5D8A] transition">Home</a>
-                <a href="#about" class="hover:text-[#2F5D8A] transition">About</a>
-                <a href="#projects" class="hover:text-[#2F5D8A] transition">Projects</a>
-                <a href="#contact" class="hover:text-[#2F5D8A] transition">Contact</a>
+            <!-- Right Side: Mobile Resume Icon & Desktop Links -->
+            <div class="flex items-center space-x-4">
 
-                <!-- Resume Download Button -->
-                <a href="./pdf/Michael_Clinton_CV.pdf" download="My_Resume.pdf"
-                    class="ml-4 px-5 py-2 rounded-full border-2 border-[#2F5D8A] text-[#2F5D8A] hover:bg-[#2F5D8A] hover:text-white transition duration-300 ease-in-out flex items-center space-x-2">
-                    <span>Resume</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <!-- MOBILE ONLY DOWNLOAD ICON -->
+                <a href="./pdf/Michael_Clinton_CV.pdf" download="Michael_Clinton_CV.pdf"
+                    class="md:hidden p-2 text-[#2F5D8A] hover:bg-[#2F5D8A]/10 rounded-lg transition"
+                    aria-label="Download Resume">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                         <polyline points="7 10 12 15 17 10"></polyline>
                         <line x1="12" y1="15" x2="12" y2="3"></line>
                     </svg>
                 </a>
+
+                <!-- DESKTOP NAVIGATION -->
+                <div class="hidden md:flex items-center space-x-8 font-medium text-[#6B7280]">
+                    <a href="#hero" class="hover:text-[#2F5D8A] transition">Home</a>
+                    <a href="#about" class="hover:text-[#2F5D8A] transition">About</a>
+                    <a href="#projects" class="hover:text-[#2F5D8A] transition">Projects</a>
+                    <a href="#contact" class="hover:text-[#2F5D8A] transition">Contact</a>
+
+                    <!-- Desktop Resume Button -->
+                    <a href="./pdf/Michael_Clinton_CV.pdf" download="Michael_Clinton_CV.pdf"
+                        class="ml-4 px-5 py-2 rounded-full border-2 border-[#2F5D8A] text-[#2F5D8A] hover:bg-[#2F5D8A] hover:text-white transition duration-300 flex items-center space-x-2">
+                        <span>Resume</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7 10 12 15 17 10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                    </a>
+                </div>
             </div>
         </div>
     </nav>
